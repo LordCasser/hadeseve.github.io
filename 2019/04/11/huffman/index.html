@@ -6,15 +6,36 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://hadeseve.github.io">
-  <title>hack for fun</title>
+  <title>Huffman | hack for fun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hack for fun">
-<meta property="og:url" content="https://hadeseve.github.io/index.html">
+  <meta name="description" content="Huffman codingIn computer science and information theory, a Huffman code is a particular type of optimal prefix code that is commonly used for lossless data compression. The process of finding and/or">
+<meta name="keywords" content="MISC1 FLAG">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Huffman">
+<meta property="og:url" content="https://hadeseve.github.io/2019/04/11/huffman/index.html">
 <meta property="og:site_name" content="hack for fun">
+<meta property="og:description" content="Huffman codingIn computer science and information theory, a Huffman code is a particular type of optimal prefix code that is commonly used for lossless data compression. The process of finding and/or">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/744cc618a7d5fcb52502bb1b8c353d3b8e26f6d0">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/9b44fd87b5e270bef4d31293bb226167a4a80058">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/1ac240d6b18d1cfc65347a605c575bc2b9735e2b">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/1a07155b21657d5228c72765d2e8e595eecaed1b">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/01acb7953ba52c2aa44264b5d0f8fd223aa178a2">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/a94e97768b8a85bb80a5ab67289276413007898a">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/295fc38a24060725a0c3362655d4b449f047d9ba">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/4fc55753007cd3c18576f7933f6f089196732029">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/63c5126254b41848d6f67edc04208b368026f067">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/b7af16a09f877fee388c4488bbce59dda95bc409">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/2799f589d23a9f11345131ef8cef9937c5e7c456">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/1be32c5fb44ffa0961a0cf1d506e0bca05c7c3eb">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/a25181e71e7e86ccfe31ba981214e6b31f57e7c8">
+<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/f31c05759c645f617ea0ef5952ea24ccef557716">
+<meta property="og:updated_time" content="2019-04-11T07:46:36.093Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hack for fun">
+<meta name="twitter:title" content="Huffman">
+<meta name="twitter:description" content="Huffman codingIn computer science and information theory, a Huffman code is a particular type of optimal prefix code that is commonly used for lossless data compression. The process of finding and/or">
+<meta name="twitter:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/744cc618a7d5fcb52502bb1b8c353d3b8e26f6d0">
   
     <link rel="alternative" href="/atom.xml" title="hack for fun" type="application/atom+xml">
   
@@ -138,16 +159,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-huffman" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-huffman" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/11/huffman/">Huffman</a>
+    <h1 class="article-title" itemprop="name">
+      Huffman
     </h1>
   
 
@@ -161,9 +180,193 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="Huffman-coding"><a href="#Huffman-coding" class="headerlink" title="Huffman coding"></a>Huffman coding</h3><p>In <a href="https://en.wikipedia.org/wiki/Computer_science" target="_blank" rel="noopener">computer science</a> and <a href="https://en.wikipedia.org/wiki/Information_theory" target="_blank" rel="noopener">information theory</a>, a <strong>Huffman code</strong> is a particular type of optimal <a href="https://en.wikipedia.org/wiki/Prefix_code" target="_blank" rel="noopener">prefix code</a> that is commonly used for <a href="https://en.wikipedia.org/wiki/Lossless_data_compression" target="_blank" rel="noopener">lossless data compression</a>. The process of finding and/or using such a code proceeds by means of <strong>Huffman coding</strong>, an algorithm developed by <a href="https://en.wikipedia.org/wiki/David_A._Huffman" target="_blank" rel="noopener">David A. Huffman</a> while he was a <a href="https://en.wikipedia.org/wiki/Doctor_of_Science" target="_blank" rel="noopener">Sc.D.</a> student at <a href="https://en.wikipedia.org/wiki/Massachusetts_Institute_of_Technology" target="_blank" rel="noopener">MIT</a>, and published in the 1952 paper “A Method for the Construction of Minimum-Redundancy Codes”.<a href="https://en.wikipedia.org/wiki/Huffman_coding#cite_note-1" target="_blank" rel="noopener">[1]</a> </p>
-        
+<a id="more"></a>
+<p>The output from Huffman’s algorithm can be viewed as a <a href="https://en.wikipedia.org/wiki/Variable-length_code" target="_blank" rel="noopener">variable-length code</a>  table for encoding a source symbol (such as a character in a file).   The algorithm derives this table from the estimated probability or  frequency of occurrence (<em>weight</em>) for each possible value of the source symbol.  As in other <a href="https://en.wikipedia.org/wiki/Entropy_encoding" target="_blank" rel="noopener">entropy encoding</a>  methods, more common symbols are generally represented using fewer bits  than less common symbols.  Huffman’s method can be efficiently  implemented, finding a code in time <a href="https://en.wikipedia.org/wiki/Linear_time" target="_blank" rel="noopener">linear</a> to the number of input weights if these weights are sorted.<a href="https://en.wikipedia.org/wiki/Huffman_coding#cite_note-2" target="_blank" rel="noopener">[2]</a>  However, although optimal among methods encoding symbols separately, Huffman coding <a href="https://en.wikipedia.org/wiki/Huffman_coding#Optimality" target="_blank" rel="noopener">is not always optimal</a> among all compression methods. </p>
+<h4 id="History"><a href="#History" class="headerlink" title="History"></a>History</h4><hr>
+<p>In 1951, <a href="https://en.wikipedia.org/wiki/David_A._Huffman" target="_blank" rel="noopener">David A. Huffman</a> and his <a href="https://en.wikipedia.org/wiki/MIT" target="_blank" rel="noopener">MIT</a> <a href="https://en.wikipedia.org/wiki/Information_theory" target="_blank" rel="noopener">information theory</a> classmates were given the choice of a term paper or a final <a href="https://en.wikipedia.org/wiki/Exam" target="_blank" rel="noopener">exam</a>. The professor, <a href="https://en.wikipedia.org/wiki/Robert_M._Fano" target="_blank" rel="noopener">Robert M. Fano</a>, assigned a <a href="https://en.wikipedia.org/wiki/Term_paper" target="_blank" rel="noopener">term paper</a>  on the problem of finding the most efficient binary code. Huffman,  unable to prove any codes were the most efficient, was about to give up  and start studying for the final when he hit upon the idea of using a  frequency-sorted <a href="https://en.wikipedia.org/wiki/Binary_tree" target="_blank" rel="noopener">binary tree</a> and quickly proved this method the most efficient.<a href="https://en.wikipedia.org/wiki/Huffman_coding#cite_note-3" target="_blank" rel="noopener">[3]</a> </p>
+<p>In doing so, Huffman outdid Fano, who had worked with <a href="https://en.wikipedia.org/wiki/Information_theory" target="_blank" rel="noopener">information theory</a> inventor <a href="https://en.wikipedia.org/wiki/Claude_Shannon" target="_blank" rel="noopener">Claude Shannon</a> to develop a similar code.  Building the tree from the bottom up guaranteed optimality, unlike top-down <a href="https://en.wikipedia.org/wiki/Shannon-Fano_coding" target="_blank" rel="noopener">Shannon-Fano coding</a>. </p>
+<h4 id="Terminology"><a href="#Terminology" class="headerlink" title="Terminology"></a>Terminology</h4><hr>
+<p>Huffman  coding uses a specific method for choosing the representation for each  symbol, resulting in a prefix code (sometimes called “prefix-free  codes”, that is, the bit string representing some particular symbol is  never a prefix of the bit string representing any other symbol).   Huffman coding is such a widespread method for creating prefix codes  that the term “Huffman code” is widely used as a synonym for “prefix  code” even when such a code is not produced by Huffman’s algorithm. </p>
+<h4 id="Problem-definition"><a href="#Problem-definition" class="headerlink" title="Problem definition"></a>Problem definition</h4><hr>
+<h5 id="Informal-description"><a href="#Informal-description" class="headerlink" title="Informal description"></a>Informal description</h5><ul>
+<li><p>Given</p>
+<p>A set of symbols and their weights (usually <a href="https://en.wikipedia.org/wiki/Proportionality_(mathematics" target="_blank" rel="noopener">proportional</a>) to probabilities).</p>
+</li>
+<li><p>Find</p>
+<p>A <a href="https://en.wikipedia.org/wiki/Prefix_code" target="_blank" rel="noopener">prefix-free binary code</a> (a set of codewords) with minimum <a href="https://en.wikipedia.org/wiki/Expected_value" target="_blank" rel="noopener">expected</a> codeword length (equivalently, a tree with minimum <a href="https://en.wikipedia.org/w/index.php?title=Weighted_path_length_from_the_root&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">weighted path length from the root</a>).</p>
+</li>
+</ul>
+<h3 id="Formalized-description"><a href="#Formalized-description" class="headerlink" title="Formalized description"></a>Formalized description</h3><p><strong>Input</strong>.</p>
+<p>Alphabet<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/744cc618a7d5fcb52502bb1b8c353d3b8e26f6d0" alt="{\displaystyle A=(a_{1},a_{2},\cdots ,a_{n})}">, which is the symbol alphabet of size <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" alt="n">. </p>
+<p>Tuple<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9b44fd87b5e270bef4d31293bb226167a4a80058" alt="{\displaystyle W=(w_{1},w_{2},\cdots ,w_{n})}">, which is the tuple of the (positive) symbol weights (usually proportional to probabilities), i.e.<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1ac240d6b18d1cfc65347a605c575bc2b9735e2b" alt="w_{i}=\mathrm {weight} \left(a_{i}\right),1\leq i\leq n"></p>
+<p><strong>Output</strong>.</p>
+<p><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1a07155b21657d5228c72765d2e8e595eecaed1b" alt="{\displaystyle C\left(W\right)=(c_{1},c_{2},\cdots ,c_{n})}">, which is the tuple of (binary) codewords, where<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/01acb7953ba52c2aa44264b5d0f8fd223aa178a2" alt="c_{i}">is the codeword for<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a94e97768b8a85bb80a5ab67289276413007898a" alt="a_{i},1\leq i\leq n"></p>
+<p><strong>Goal</strong>.</p>
+<p>Let<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/295fc38a24060725a0c3362655d4b449f047d9ba" alt="{\displaystyle L\left(C\left(W\right)\right)=\sum _{i=1}^{n}{w_{i}\times \mathrm {length} \left(c_{i}\right)}}">be the weighted path length of code <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4fc55753007cd3c18576f7933f6f089196732029" alt="C">. Condition: <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/63c5126254b41848d6f67edc04208b368026f067" alt="{\displaystyle L\left(C\left(W\right)\right)\leq L\left(T\left(W\right)\right)}">for any code<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b7af16a09f877fee388c4488bbce59dda95bc409" alt="{\displaystyle T\left(W\right)}"></p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>We give an example of the result of Huffman coding for a code with 30<br>characters and given weights. We will not verify that it minimizes <em>L</em> over all codes, but we will compute <em>L</em> and compare it to the <a href="https://en.wikipedia.org/wiki/Shannon_entropy" target="_blank" rel="noopener">Shannon entropy</a> <em>H</em> of the given set of weights; the result is nearly optimal.</p>
+<table>
+<thead>
+<tr>
+<th>Input (<em>A</em>, <em>W</em>)</th>
+<th>Symbol (<em>a**i</em>)</th>
+<th>{</th>
+<th>n</th>
+<th>t</th>
+<th>f</th>
+<th>c</th>
+<th>u</th>
+<th>s</th>
+<th>_</th>
+<th>}</th>
+<th>Sum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Weights (<em>w**i</em>)</td>
+<td>0.03</td>
+<td>0.18</td>
+<td>0.15</td>
+<td>0.08</td>
+<td>0.1</td>
+<td>0.15</td>
+<td>0.13</td>
+<td>0.15</td>
+<td>0.03</td>
+<td>=1</td>
+</tr>
+<tr>
+<td>Output <em>C</em></td>
+<td>Codewords (<em>c**i</em>)</td>
+<td>10000</td>
+<td>00</td>
+<td>111</td>
+<td>1001</td>
+<td>010</td>
+<td>101</td>
+<td>011</td>
+<td>110</td>
+<td>10001</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Codeword length (in bits)<br>(<em>l**i</em>)</td>
+<td>5</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Contribution to weighted path length<br>(<em>l**i</em> <em>w**i</em> )</td>
+<td>0.15</td>
+<td>0.36</td>
+<td>0.45</td>
+<td>0.32</td>
+<td>0.3</td>
+<td>0.45</td>
+<td>0.39</td>
+<td>0.45</td>
+<td>0.15</td>
+<td><em>L</em>(<em>C</em>) = 3.02</td>
+</tr>
+<tr>
+<td>Optimality</td>
+<td>Probability budget<br>(2−<em>l**i</em>)</td>
+<td>1/32</td>
+<td>1/4</td>
+<td>1/8</td>
+<td>1/16</td>
+<td>1//8</td>
+<td>1/8</td>
+<td>1/8</td>
+<td>1/8</td>
+<td>1//32</td>
+<td>=1.00</td>
+</tr>
+<tr>
+<td></td>
+<td>Information content (in bits)<br>(−<strong>log</strong>2 <em>w**i</em>) ≈</td>
+<td>5.06</td>
+<td>2.47</td>
+<td>2.74</td>
+<td>3.64</td>
+<td>3.32</td>
+<td>2.74</td>
+<td>2.94</td>
+<td>2.74</td>
+<td>5.06</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Contribution to entropy<br>(−<em>w**i</em> <strong>log</strong>2 <em>w**i</em>)</td>
+<td>0.152</td>
+<td>0.445</td>
+<td>0.411</td>
+<td>0.292</td>
+<td>0.066</td>
+<td>0.411</td>
+<td>0.383</td>
+<td>0.411</td>
+<td>0.152</td>
+<td>H(A)=2.721</td>
+</tr>
+</tbody>
+</table>
+<p>For any code that is <em>biunique</em>, meaning that the code is <a href="https://en.wikipedia.org/wiki/Variable-length_code#Uniquely_decodable_codes" target="_blank" rel="noopener"><em>uniquely decodeable</em></a>,  the sum of the probability budgets across all symbols is always less  than or equal to one. In this example, the sum is strictly equal to one;  as a result, the code is termed a <em>complete</em> code. If this is not  the case, you can always derive an equivalent code by adding extra  symbols (with associated null probabilities), to make the code complete  while keeping it <em>biunique</em>. </p>
+<p>As defined by <a href="https://en.wikipedia.org/wiki/A_Mathematical_Theory_of_Communication" target="_blank" rel="noopener">Shannon (1948)</a>, the information content <em>h</em> (in bits) of each symbol <em>a</em>i with non-null probability is </p>
+<p><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2799f589d23a9f11345131ef8cef9937c5e7c456" alt="h(a_{i})=\log _{2}{1 \over w_{i}}."></p>
+<p>The <a href="https://en.wikipedia.org/wiki/Information_entropy" target="_blank" rel="noopener">entropy</a> <em>H</em> (in bits) is the weighted sum, across all symbols <em>a**i</em> with non-zero probability <em>w**i</em>, of the information content of each symbol:</p>
+<p><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1be32c5fb44ffa0961a0cf1d506e0bca05c7c3eb" alt="H(A)=\sum _{w_{i}&gt;0}w_{i}h(a_{i})=\sum _{w_{i}&gt;0}w_{i}\log _{2}{1 \over w_{i}}=-\sum _{w_{i}&gt;0}w_{i}\log _{2}{w_{i}}."></p>
+<p>(Note: A symbol with zero probability has zero contribution to the entropy, since<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a25181e71e7e86ccfe31ba981214e6b31f57e7c8" alt="\lim _{w\to 0^{+}}w\log _{2}w=0">So for simplicity, symbols with zero probability can be left out of the formula above.)</p>
+<p>As a consequence of <a href="https://en.wikipedia.org/wiki/Shannon%27s_source_coding_theorem" target="_blank" rel="noopener">Shannon’s source coding theorem</a>,  the entropy is a measure of the smallest codeword length that is  theoretically possible for the given alphabet with associated weights.  In this example, the weighted average codeword length is 2.25 bits per  symbol, only slightly larger than the calculated entropy of 2.205 bits  per symbol. So not only is this code optimal in the sense that no other  feasible code performs better, but it is very close to the theoretical  limit established by Shannon. </p>
+<p>In general, a Huffman code need not be unique.  Thus the set of  Huffman codes for a given probability distribution is a non-empty subset  of the codes minimizing<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f31c05759c645f617ea0ef5952ea24ccef557716" alt="L(C)">for that probability distribution.  (However, for each minimizing<br>codeword length assignment, there exists at least one Huffman code with those lengths.)</p>
+<h3 id="Main-properties"><a href="#Main-properties" class="headerlink" title="Main properties"></a>Main properties</h3><hr>
+<p>The probabilities used can be generic ones for the application domain<br>that are based on average experience, or they can be the actual<br>frequencies found in the text being compressed.<br>This requires that a <a href="https://en.wikipedia.org/wiki/Frequency_table" target="_blank" rel="noopener">frequency table</a><br>must be stored with the compressed text. See the Decompression section<br>above for more information about the various techniques employed for<br>this purpose.</p>
+<p>&#x200C;&#35;&#35;&#35;&#35;&#32;&#79;&#112;&#116;&#105;&#109;&#x200C;&#97;&#108;&#105;&#116;&#121;&#10;&#10;&#42;&#83;&#101;&#x200D;&#101;&#32;&#97;&#108;&#115;&#111;&#32;&#65;&#114;&#105;&#x200C;&#116;&#104;&#109;&#101;&#116;&#105;&#99;&#32;&#99;&#111;&#x200D;&#100;&#105;&#110;&#103;&#35;&#72;&#117;&#102;&#102;&#109;&#x200C;&#97;&#110;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#42;&#x200D;&#10;&#10;&#72;&#117;&#102;&#102;&#109;&#97;&#110;&#39;&#x200D;&#115;&#32;&#111;&#114;&#105;&#103;&#105;&#110;&#97;&#108;&#x200D;&#32;&#97;&#108;&#103;&#111;&#114;&#105;&#116;&#104;&#109;&#x200D;&#32;&#105;&#115;&#32;&#111;&#112;&#116;&#105;&#109;&#97;&#x200D;&#108;&#32;&#102;&#111;&#114;&#32;&#97;&#32;&#115;&#121;&#x200C;&#109;&#98;&#111;&#108;&#45;&#98;&#121;&#45;&#115;&#121;&#x200D;&#109;&#98;&#111;&#108;&#32;&#99;&#111;&#100;&#105;&#110;&#x200C;&#103;&#32;&#119;&#105;&#116;&#104;&#32;&#97;&#32;&#107;&#x200D;&#110;&#111;&#119;&#110;&#32;&#105;&#110;&#112;&#117;&#116;&#x200D;&#32;&#112;&#114;&#111;&#98;&#97;&#98;&#105;&#108;&#105;&#x200D;&#116;&#121;&#32;&#100;&#105;&#115;&#116;&#114;&#105;&#98;&#x200D;&#117;&#116;&#105;&#111;&#110;&#44;&#32;&#105;&#46;&#101;&#x200C;&#46;&#44;&#32;&#115;&#101;&#112;&#97;&#114;&#97;&#116;&#x200C;&#101;&#108;&#121;&#32;&#101;&#110;&#99;&#111;&#100;&#105;&#x200D;&#110;&#103;&#32;&#117;&#110;&#114;&#101;&#108;&#97;&#116;&#x200D;&#101;&#100;&#32;&#115;&#121;&#109;&#98;&#111;&#108;&#115;&#x200C;&#32;&#105;&#110;&#32;&#115;&#117;&#99;&#104;&#32;&#97;&#x200C;&#32;&#100;&#97;&#116;&#97;&#32;&#115;&#116;&#114;&#101;&#x200C;&#97;&#109;&#46;&#32;&#72;&#111;&#119;&#101;&#118;&#101;&#x200C;&#114;&#44;&#32;&#105;&#116;&#32;&#105;&#115;&#32;&#110;&#x200D;&#111;&#116;&#32;&#111;&#112;&#116;&#105;&#109;&#97;&#108;&#x200C;&#32;&#119;&#104;&#101;&#110;&#32;&#116;&#104;&#101;&#32;&#x200D;&#115;&#121;&#109;&#98;&#111;&#108;&#45;&#98;&#121;&#45;&#x200C;&#115;&#121;&#109;&#98;&#111;&#108;&#32;&#114;&#101;&#115;&#x200D;&#116;&#114;&#105;&#99;&#116;&#105;&#111;&#110;&#32;&#105;&#x200D;&#115;&#32;&#100;&#114;&#111;&#112;&#112;&#101;&#100;&#44;&#x200C;&#32;&#111;&#114;&#32;&#119;&#104;&#101;&#110;&#32;&#116;&#x200C;&#104;&#101;&#32;&#112;&#114;&#111;&#98;&#97;&#98;&#105;&#x200D;&#108;&#105;&#116;&#121;&#32;&#109;&#97;&#115;&#115;&#32;&#x200D;&#102;&#117;&#110;&#99;&#116;&#105;&#111;&#110;&#115;&#32;&#x200C;&#97;&#114;&#101;&#32;&#117;&#110;&#107;&#110;&#111;&#119;&#x200C;&#110;&#46;&#32;&#65;&#108;&#115;&#111;&#44;&#32;&#105;&#x200C;&#102;&#32;&#115;&#121;&#109;&#98;&#111;&#108;&#115;&#32;&#x200C;&#97;&#114;&#101;&#32;&#110;&#111;&#116;&#32;&#105;&#110;&#x200C;&#100;&#101;&#112;&#101;&#110;&#100;&#101;&#110;&#116;&#32;&#x200C;&#97;&#110;&#100;&#32;&#105;&#100;&#101;&#110;&#116;&#105;&#x200D;&#99;&#97;&#108;&#108;&#121;&#32;&#100;&#105;&#115;&#116;&#x200C;&#114;&#105;&#98;&#117;&#116;&#101;&#100;&#44;&#32;&#97;&#x200D;&#32;&#115;&#105;&#110;&#103;&#108;&#101;&#32;&#99;&#111;&#x200D;&#100;&#101;&#32;&#109;&#97;&#121;&#32;&#98;&#101;&#32;&#x200C;&#105;&#110;&#115;&#117;&#102;&#102;&#105;&#99;&#105;&#101;&#x200C;&#110;&#116;&#32;&#102;&#111;&#114;&#32;&#111;&#112;&#116;&#x200D;&#105;&#109;&#97;&#108;&#105;&#116;&#121;&#46;&#32;&#79;&#x200D;&#116;&#104;&#101;&#114;&#32;&#109;&#101;&#116;&#104;&#111;&#x200D;&#100;&#115;&#32;&#115;&#117;&#99;&#104;&#32;&#97;&#115;&#x200C;&#32;&#97;&#114;&#105;&#116;&#104;&#109;&#101;&#116;&#105;&#x200C;&#99;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#32;&#111;&#x200D;&#102;&#116;&#101;&#110;&#32;&#104;&#97;&#118;&#101;&#32;&#x200D;&#98;&#101;&#116;&#116;&#101;&#114;&#32;&#99;&#111;&#109;&#x200D;&#112;&#114;&#101;&#115;&#115;&#105;&#111;&#110;&#32;&#99;&#x200C;&#97;&#112;&#97;&#98;&#105;&#108;&#105;&#116;&#121;&#46;&#x200D;&#10;&#10;&#65;&#108;&#116;&#104;&#111;&#117;&#103;&#104;&#x200C;&#32;&#98;&#111;&#116;&#104;&#32;&#97;&#102;&#111;&#114;&#x200C;&#101;&#109;&#101;&#110;&#116;&#105;&#111;&#110;&#101;&#100;&#x200D;&#32;&#109;&#101;&#116;&#104;&#111;&#100;&#115;&#32;&#99;&#x200C;&#97;&#110;&#32;&#99;&#111;&#109;&#98;&#105;&#110;&#101;&#x200C;&#32;&#97;&#110;&#32;&#97;&#114;&#98;&#105;&#116;&#114;&#x200C;&#97;&#114;&#121;&#32;&#110;&#117;&#109;&#98;&#101;&#114;&#x200D;&#32;&#111;&#102;&#32;&#115;&#121;&#109;&#98;&#111;&#108;&#x200D;&#115;&#32;&#102;&#111;&#114;&#32;&#109;&#111;&#114;&#101;&#x200D;&#32;&#101;&#102;&#102;&#105;&#99;&#105;&#101;&#110;&#116;&#x200C;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#32;&#97;&#110;&#x200D;&#100;&#32;&#103;&#101;&#110;&#101;&#114;&#97;&#108;&#108;&#x200C;&#121;&#32;&#97;&#100;&#97;&#112;&#116;&#32;&#116;&#111;&#x200C;&#32;&#116;&#104;&#101;&#32;&#97;&#99;&#116;&#117;&#97;&#x200D;&#108;&#32;&#105;&#110;&#112;&#117;&#116;&#32;&#115;&#116;&#x200D;&#97;&#116;&#105;&#115;&#116;&#105;&#99;&#115;&#44;&#32;&#x200D;&#97;&#114;&#105;&#116;&#104;&#109;&#101;&#116;&#105;&#99;&#x200D;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#32;&#100;&#111;&#x200C;&#101;&#115;&#32;&#115;&#111;&#32;&#119;&#105;&#116;&#104;&#x200D;&#111;&#117;&#116;&#32;&#115;&#105;&#103;&#110;&#105;&#102;&#x200D;&#105;&#99;&#97;&#110;&#116;&#108;&#121;&#32;&#105;&#110;&#x200D;&#99;&#114;&#101;&#97;&#115;&#105;&#110;&#103;&#32;&#105;&#x200D;&#116;&#115;&#32;&#99;&#111;&#109;&#112;&#117;&#116;&#97;&#x200D;&#116;&#105;&#111;&#110;&#97;&#108;&#32;&#111;&#114;&#32;&#x200D;&#97;&#108;&#103;&#111;&#114;&#105;&#116;&#104;&#109;&#105;&#x200C;&#99;&#32;&#99;&#111;&#109;&#112;&#108;&#101;&#120;&#105;&#x200C;&#116;&#105;&#101;&#115;&#32;&#40;&#116;&#104;&#111;&#117;&#x200C;&#103;&#104;&#32;&#116;&#104;&#101;&#32;&#115;&#105;&#109;&#x200D;&#112;&#108;&#101;&#115;&#116;&#32;&#118;&#101;&#114;&#115;&#x200D;&#105;&#111;&#110;&#32;&#105;&#115;&#32;&#115;&#108;&#111;&#x200C;&#119;&#101;&#114;&#32;&#97;&#110;&#100;&#32;&#109;&#111;&#x200D;&#114;&#101;&#32;&#99;&#111;&#109;&#112;&#108;&#101;&#120;&#x200D;&#32;&#116;&#104;&#97;&#110;&#32;&#72;&#117;&#102;&#102;&#x200D;&#109;&#97;&#110;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#x200C;&#41;&#46;&#32;&#83;&#117;&#99;&#104;&#32;&#102;&#108;&#x200D;&#101;&#120;&#105;&#98;&#105;&#108;&#105;&#116;&#121;&#32;&#x200C;&#105;&#115;&#32;&#101;&#115;&#112;&#101;&#99;&#105;&#97;&#x200C;&#108;&#108;&#121;&#32;&#117;&#115;&#101;&#102;&#117;&#108;&#x200D;&#32;&#119;&#104;&#101;&#110;&#32;&#105;&#110;&#112;&#117;&#x200D;&#116;&#32;&#112;&#114;&#111;&#98;&#97;&#98;&#105;&#108;&#x200D;&#105;&#116;&#105;&#101;&#115;&#32;&#97;&#114;&#101;&#32;&#x200D;&#110;&#111;&#116;&#32;&#112;&#114;&#101;&#99;&#105;&#115;&#x200C;&#101;&#108;&#121;&#32;&#107;&#110;&#111;&#119;&#110;&#32;&#x200D;&#111;&#114;&#32;&#118;&#97;&#114;&#121;&#32;&#115;&#105;&#x200C;&#103;&#110;&#105;&#102;&#105;&#99;&#97;&#110;&#116;&#108;&#x200D;&#121;&#32;&#119;&#105;&#116;&#104;&#105;&#110;&#32;&#116;&#x200D;&#104;&#101;&#32;&#115;&#116;&#114;&#101;&#97;&#109;&#46;&#x200C;&#32;&#72;&#111;&#119;&#101;&#118;&#101;&#114;&#44;&#32;&#x200D;&#72;&#117;&#102;&#102;&#109;&#97;&#110;&#32;&#99;&#111;&#x200C;&#100;&#105;&#110;&#103;&#32;&#105;&#115;&#32;&#117;&#115;&#x200D;&#117;&#97;&#108;&#108;&#121;&#32;&#102;&#97;&#115;&#116;&#x200C;&#101;&#114;&#32;&#97;&#110;&#100;&#32;&#97;&#114;&#105;&#x200D;&#116;&#104;&#109;&#101;&#116;&#105;&#99;&#32;&#99;&#111;&#x200D;&#100;&#105;&#110;&#103;&#32;&#119;&#97;&#115;&#32;&#104;&#x200D;&#105;&#115;&#116;&#111;&#114;&#105;&#99;&#97;&#108;&#108;&#x200D;&#121;&#32;&#97;&#32;&#115;&#117;&#98;&#106;&#101;&#99;&#x200C;&#116;&#32;&#111;&#102;&#32;&#115;&#111;&#109;&#101;&#32;&#x200C;&#99;&#111;&#110;&#99;&#101;&#114;&#110;&#32;&#111;&#118;&#x200C;&#101;&#114;&#32;&#112;&#97;&#116;&#101;&#110;&#116;&#32;&#x200D;&#105;&#115;&#115;&#117;&#101;&#115;&#46;&#32;&#84;&#104;&#117;&#115;&#32;&#109;&#97;&#110;&#121;&#32;&#116;&#101;&#99;&#104;&#110;&#111;&#108;&#111;&#103;&#105;&#101;&#115;&#32;&#104;&#97;&#118;&#101;&#32;&#104;&#105;&#115;&#116;&#111;&#114;&#105;&#99;&#97;&#108;&#108;&#121;&#32;&#97;&#118;&#111;&#105;&#100;&#101;&#100;&#32;&#97;&#114;&#105;&#116;&#104;&#109;&#101;&#116;&#105;&#99;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#32;&#105;&#110;&#32;&#102;&#97;&#118;&#111;&#114;&#32;&#111;&#102;&#32;&#72;&#117;&#102;&#102;&#109;&#97;&#110;&#32;&#97;&#110;&#100;&#32;&#111;&#116;&#104;&#101;&#114;&#32;&#112;&#114;&#101;&#102;&#105;&#120;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#32;&#116;&#101;&#99;&#104;&#110;&#105;&#113;&#117;&#101;&#115;&#46;&#32;&#65;&#115;&#32;&#111;&#102;&#32;&#109;&#105;&#100;&#45;&#50;&#48;&#49;&#48;&#44;&#32;&#116;&#104;&#101;&#32;&#109;&#111;&#115;&#116;&#32;&#99;&#111;&#109;&#109;&#111;&#110;&#108;&#121;&#32;&#117;&#115;&#101;&#100;&#32;&#116;&#101;&#99;&#104;&#110;&#105;&#113;&#117;&#101;&#115;&#32;&#102;&#111;&#114;&#32;&#116;&#104;&#105;&#115;&#32;&#97;&#108;&#116;&#101;&#114;&#110;&#97;&#116;&#105;&#118;&#101;&#32;&#116;&#111;&#32;&#72;&#117;&#102;&#102;&#109;&#97;&#110;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#32;&#104;&#97;&#118;&#101;&#32;&#112;&#97;&#115;&#115;&#101;&#100;&#32;&#105;&#110;&#116;&#111;&#32;&#116;&#104;&#101;&#32;&#112;&#117;&#98;&#108;&#105;&#99;&#32;&#100;&#111;&#109;&#97;&#105;&#110;&#32;&#97;&#115;&#32;&#116;&#104;&#101;&#32;&#101;&#97;&#114;&#108;&#121;&#32;&#112;&#97;&#116;&#101;&#110;&#116;&#115;&#32;&#104;&#97;&#118;&#101;&#32;&#101;&#120;&#112;&#105;&#114;&#101;&#100;&#46;&#10;&#10;&#70;&#111;&#114;&#32;&#97;&#32;&#115;&#101;&#116;&#32;&#111;&#102;&#32;&#115;&#121;&#109;&#98;&#111;&#108;&#115;&#32;&#119;&#105;&#116;&#104;&#32;&#97;&#32;&#117;&#110;&#105;&#102;&#111;&#114;&#109;&#32;&#112;&#114;&#111;&#98;&#97;&#98;&#105;&#108;&#105;&#116;&#121;&#32;&#100;&#105;&#115;&#116;&#114;&#105;&#98;&#117;&#116;&#105;&#111;&#110;&#32;&#97;&#110;&#100;&#32;&#97;&#32;&#110;&#117;&#109;&#98;&#101;&#114;&#32;&#111;&#102;&#32;&#109;&#101;&#109;&#98;&#101;&#114;&#115;&#32;&#119;&#104;&#105;&#99;&#104;&#32;&#105;&#115;&#32;&#97;&#32;&#112;&#111;&#119;&#101;&#114;&#32;&#111;&#102;&#32;&#116;&#119;&#111;&#44;&#32;&#72;&#117;&#102;&#102;&#109;&#97;&#110;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#32;&#105;&#115;&#32;&#101;&#113;&#117;&#105;&#118;&#97;&#108;&#101;&#110;&#116;&#32;&#116;&#111;&#32;&#115;&#105;&#109;&#112;&#108;&#101;&#32;&#98;&#105;&#110;&#97;&#114;&#121;&#32;&#98;&#108;&#111;&#99;&#107;&#32;&#101;&#110;&#99;&#111;&#100;&#105;&#110;&#103;&#44;&#32;&#101;&#46;&#103;&#46;&#44;&#32;&#65;&#83;&#67;&#73;&#73;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#46;&#32;&#84;&#104;&#105;&#115;&#32;&#114;&#101;&#102;&#108;&#101;&#99;&#116;&#115;&#32;&#116;&#104;&#101;&#32;&#102;&#97;&#99;&#116;&#32;&#116;&#104;&#97;&#116;&#32;&#99;&#111;&#109;&#112;&#114;&#101;&#115;&#115;&#105;&#111;&#110;&#32;&#105;&#115;&#32;&#110;&#111;&#116;&#32;&#112;&#111;&#115;&#115;&#105;&#98;&#108;&#101;&#32;&#119;&#105;&#116;&#104;&#32;&#115;&#117;&#99;&#104;&#32;&#97;&#110;&#32;&#105;&#110;&#112;&#117;&#116;&#44;&#32;&#110;&#111;&#32;&#109;&#97;&#116;&#116;&#101;&#114;&#32;&#119;&#104;&#97;&#116;&#32;&#116;&#104;&#101;&#32;&#99;&#111;&#109;&#112;&#114;&#101;&#115;&#115;&#105;&#111;&#110;&#32;&#109;&#101;&#116;&#104;&#111;&#100;&#44;&#32;&#105;&#46;&#101;&#46;&#44;&#32;&#100;&#111;&#105;&#110;&#103;&#32;&#110;&#111;&#116;&#104;&#105;&#110;&#103;&#32;&#116;&#111;&#32;&#116;&#104;&#101;&#32;&#100;&#97;&#116;&#97;&#32;&#105;&#115;&#32;&#116;&#104;&#101;&#32;&#111;&#112;&#116;&#105;&#109;&#97;&#108;&#32;&#116;&#104;&#105;&#110;&#103;&#32;&#116;&#111;&#32;&#100;&#111;&#46;&#10;&#10;&#72;&#117;&#102;&#102;&#109;&#97;&#110;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#32;&#105;&#115;&#32;&#111;&#112;&#116;&#105;&#109;&#97;&#108;&#32;&#97;&#109;&#111;&#110;&#103;&#32;&#97;&#108;&#108;&#32;&#109;&#101;&#116;&#104;&#111;&#100;&#115;&#32;&#105;&#110;&#32;&#97;&#110;&#121;&#32;&#99;&#97;&#115;&#101;&#32;&#119;&#104;&#101;&#114;&#101;&#32;&#101;&#97;&#99;&#104;&#32;&#105;&#110;&#112;&#117;&#116;&#32;&#115;&#121;&#109;&#98;&#111;&#108;&#32;&#105;&#115;&#32;&#97;&#32;&#107;&#110;&#111;&#119;&#110;&#32;&#105;&#110;&#100;&#101;&#112;&#101;&#110;&#100;&#101;&#110;&#116;&#32;&#97;&#110;&#100;&#32;&#105;&#100;&#101;&#110;&#116;&#105;&#99;&#97;&#108;&#108;&#121;&#32;&#100;&#105;&#115;&#116;&#114;&#105;&#98;&#117;&#116;&#101;&#100;&#32;&#114;&#97;&#110;&#100;&#111;&#109;&#32;&#118;&#97;&#114;&#105;&#97;&#98;&#108;&#101;&#32;&#104;&#97;&#118;&#105;&#110;&#103;&#32;&#97;&#32;&#112;&#114;&#111;&#98;&#97;&#98;&#105;&#108;&#105;&#116;&#121;&#32;&#116;&#104;&#97;&#116;&#32;&#105;&#115;&#32;&#100;&#121;&#97;&#100;&#105;&#99;&#44;&#32;&#105;&#46;&#101;&#46;&#44;&#32;&#105;&#115;&#32;&#116;&#104;&#101;&#32;&#105;&#110;&#118;&#101;&#114;&#115;&#101;&#32;&#111;&#102;&#32;&#97;&#32;&#112;&#111;&#119;&#101;&#114;&#32;&#111;&#102;&#32;&#116;&#119;&#111;&#46;&#32;&#80;&#114;&#101;&#102;&#105;&#120;&#32;&#99;&#111;&#100;&#101;&#115;&#44;&#32;&#97;&#110;&#100;&#32;&#116;&#104;&#117;&#115;&#32;&#72;&#117;&#102;&#102;&#109;&#97;&#110;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#32;&#105;&#110;&#32;&#112;&#97;&#114;&#116;&#105;&#99;&#117;&#108;&#97;&#114;&#44;&#32;&#116;&#101;&#110;&#100;&#32;&#116;&#111;&#32;&#104;&#97;&#118;&#101;&#32;&#105;&#110;&#101;&#102;&#102;&#105;&#99;&#105;&#101;&#110;&#99;&#121;&#32;&#111;&#110;&#32;&#115;&#109;&#97;&#108;&#108;&#32;&#97;&#108;&#112;&#104;&#97;&#98;&#101;&#116;&#115;&#44;&#32;&#119;&#104;&#101;&#114;&#101;&#32;&#112;&#114;&#111;&#98;&#97;&#98;&#105;&#108;&#105;&#116;&#105;&#101;&#115;&#32;&#111;&#102;&#116;&#101;&#110;&#32;&#102;&#97;&#108;&#108;&#32;&#98;&#101;&#116;&#119;&#101;&#101;&#110;&#32;&#116;&#104;&#101;&#115;&#101;&#32;&#111;&#112;&#116;&#105;&#109;&#97;&#108;&#32;&#40;&#100;&#121;&#97;&#100;&#105;&#99;&#41;&#32;&#112;&#111;&#105;&#110;&#116;&#115;&#46;&#32;&#84;&#104;&#101;&#32;&#119;&#111;&#114;&#115;&#116;&#32;&#99;&#97;&#115;&#101;&#32;&#102;&#111;&#114;&#32;&#72;&#117;&#102;&#102;&#109;&#97;&#110;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#32;&#99;&#97;&#110;&#32;&#104;&#97;&#112;&#112;&#101;&#110;&#32;&#119;&#104;&#101;&#110;&#32;&#116;&#104;&#101;&#32;&#112;&#114;&#111;&#98;&#97;&#98;&#105;&#108;&#105;&#116;&#121;&#32;&#111;&#102;&#32;&#116;&#104;&#101;&#32;&#109;&#111;&#115;&#116;&#32;&#108;&#105;&#107;&#101;&#108;&#121;&#32;&#115;&#121;&#109;&#98;&#111;&#108;&#32;&#102;&#97;&#114;&#32;&#101;&#120;&#99;&#101;&#101;&#100;&#115;&#32;&#50;&#8722;&#49;&#32;&#61;&#32;&#48;&#46;&#53;&#44;&#32;&#109;&#97;&#107;&#105;&#110;&#103;&#32;&#116;&#104;&#101;&#32;&#117;&#112;&#112;&#101;&#114;&#32;&#108;&#105;&#109;&#105;&#116;&#32;&#111;&#102;&#32;&#105;&#110;&#101;&#102;&#102;&#105;&#99;&#105;&#101;&#110;&#99;&#121;&#32;&#117;&#110;&#98;&#111;&#117;&#110;&#100;&#101;&#100;&#46;&#10;&#10;&#84;&#104;&#101;&#114;&#101;&#32;&#97;&#114;&#101;&#32;&#116;&#119;&#111;&#32;&#114;&#101;&#108;&#97;&#116;&#101;&#100;&#32;&#97;&#112;&#112;&#114;&#111;&#97;&#99;&#104;&#101;&#115;&#32;&#102;&#111;&#114;&#32;&#103;&#101;&#116;&#116;&#105;&#110;&#103;&#32;&#97;&#114;&#111;&#117;&#110;&#100;&#32;&#116;&#104;&#105;&#115;&#32;&#112;&#97;&#114;&#116;&#105;&#99;&#117;&#108;&#97;&#114;&#32;&#105;&#110;&#101;&#102;&#102;&#105;&#99;&#105;&#101;&#110;&#99;&#121;&#32;&#119;&#104;&#105;&#108;&#101;&#32;&#115;&#116;&#105;&#108;&#108;&#32;&#117;&#115;&#105;&#110;&#103;&#32;&#72;&#117;&#102;&#102;&#109;&#97;&#110;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#46;&#32;&#67;&#111;&#109;&#98;&#105;&#110;&#105;&#110;&#103;&#32;&#97;&#32;&#102;&#105;&#120;&#101;&#100;&#32;&#110;&#117;&#109;&#98;&#101;&#114;&#32;&#111;&#102;&#32;&#115;&#121;&#109;&#98;&#111;&#108;&#115;&#32;&#116;&#111;&#103;&#101;&#116;&#104;&#101;&#114;&#32;&#40;&#34;&#98;&#108;&#111;&#99;&#107;&#105;&#110;&#103;&#34;&#41;&#32;&#111;&#102;&#116;&#101;&#110;&#32;&#105;&#110;&#99;&#114;&#101;&#97;&#115;&#101;&#115;&#32;&#40;&#97;&#110;&#100;&#32;&#110;&#101;&#118;&#101;&#114;&#32;&#100;&#101;&#99;&#114;&#101;&#97;&#115;&#101;&#115;&#41;&#32;&#99;&#111;&#109;&#112;&#114;&#101;&#115;&#115;&#105;&#111;&#110;&#46;&#32;&#65;&#115;&#32;&#116;&#104;&#101;&#32;&#115;&#105;&#122;&#101;&#32;&#111;&#102;&#32;&#116;&#104;&#101;&#32;&#98;&#108;&#111;&#99;&#107;&#32;&#97;&#112;&#112;&#114;&#111;&#97;&#99;&#104;&#101;&#115;&#32;&#105;&#110;&#102;&#105;&#110;&#105;&#116;&#121;&#44;&#32;&#72;&#117;&#102;&#102;&#109;&#97;&#110;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#32;&#116;&#104;&#101;&#111;&#114;&#101;&#116;&#105;&#99;&#97;&#108;&#108;&#121;&#32;&#97;&#112;&#112;&#114;&#111;&#97;&#99;&#104;&#101;&#115;&#32;&#116;&#104;&#101;&#32;&#101;&#110;&#116;&#114;&#111;&#112;&#121;&#32;&#108;&#105;&#109;&#105;&#116;&#44;&#32;&#105;&#46;&#101;&#46;&#44;&#32;&#111;&#112;&#116;&#105;&#109;&#97;&#108;&#32;&#99;&#111;&#109;&#112;&#114;&#101;&#115;&#115;&#105;&#111;&#110;&#46;&#32;&#72;&#111;&#119;&#101;&#118;&#101;&#114;&#44;&#32;&#98;&#108;&#111;&#99;&#107;&#105;&#110;&#103;&#32;&#97;&#114;&#98;&#105;&#116;&#114;&#97;&#114;&#105;&#108;&#121;&#32;&#108;&#97;&#114;&#103;&#101;&#32;&#103;&#114;&#111;&#117;&#112;&#115;&#32;&#111;&#102;&#32;&#115;&#121;&#109;&#98;&#111;&#108;&#115;&#32;&#105;&#115;&#32;&#105;&#109;&#112;&#114;&#97;&#99;&#116;&#105;&#99;&#97;&#108;&#44;&#32;&#97;&#115;&#32;&#116;&#104;&#101;&#32;&#99;&#111;&#109;&#112;&#108;&#101;&#120;&#105;&#116;&#121;&#32;&#111;&#102;&#32;&#97;&#32;&#72;&#117;&#102;&#102;&#109;&#97;&#110;&#32;&#99;&#111;&#100;&#101;&#32;&#105;&#115;&#32;&#108;&#105;&#110;&#101;&#97;&#114;&#32;&#105;&#110;&#32;&#116;&#104;&#101;&#32;&#110;&#117;&#109;&#98;&#101;&#114;&#32;&#111;&#102;&#32;&#112;&#111;&#115;&#115;&#105;&#98;&#105;&#108;&#105;&#116;&#105;&#101;&#115;&#32;&#116;&#111;&#32;&#98;&#101;&#32;&#101;&#110;&#99;&#111;&#100;&#101;&#100;&#44;&#32;&#97;&#32;&#110;&#117;&#109;&#98;&#101;&#114;&#32;&#116;&#104;&#97;&#116;&#32;&#105;&#115;&#32;&#101;&#120;&#112;&#111;&#110;&#101;&#110;&#116;&#105;&#97;&#108;&#32;&#105;&#110;&#32;&#116;&#104;&#101;&#32;&#115;&#105;&#122;&#101;&#32;&#111;&#102;&#32;&#97;&#32;&#98;&#108;&#111;&#99;&#107;&#46;&#32;&#84;&#104;&#105;&#115;&#32;&#108;&#105;&#109;&#105;&#116;&#115;&#32;&#116;&#104;&#101;&#32;&#97;&#109;&#111;&#117;&#110;&#116;&#32;&#111;&#102;&#32;&#98;&#108;&#111;&#99;&#107;&#105;&#110;&#103;&#32;&#116;&#104;&#97;&#116;&#32;&#105;&#115;&#32;&#100;&#111;&#110;&#101;&#32;&#105;&#110;&#32;&#112;&#114;&#97;&#99;&#116;&#105;&#99;&#101;&#46;&#10;&#10;&#65;&#32;&#112;&#114;&#97;&#99;&#116;&#105;&#99;&#97;&#108;&#32;&#97;&#108;&#116;&#101;&#114;&#110;&#97;&#116;&#105;&#118;&#101;&#44;&#32;&#105;&#110;&#32;&#119;&#105;&#100;&#101;&#115;&#112;&#114;&#101;&#97;&#100;&#32;&#117;&#115;&#101;&#44;&#32;&#105;&#115;&#32;&#114;&#117;&#110;&#45;&#108;&#101;&#110;&#103;&#116;&#104;&#32;&#101;&#110;&#99;&#111;&#100;&#105;&#110;&#103;&#46;&#32;&#84;&#104;&#105;&#115;&#32;&#116;&#101;&#99;&#104;&#110;&#105;&#113;&#117;&#101;&#32;&#97;&#100;&#100;&#115;&#32;&#111;&#110;&#101;&#32;&#115;&#116;&#101;&#112;&#32;&#105;&#110;&#32;&#97;&#100;&#118;&#97;&#110;&#99;&#101;&#32;&#111;&#102;&#32;&#101;&#110;&#116;&#114;&#111;&#112;&#121;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#44;&#32;&#115;&#112;&#101;&#99;&#105;&#102;&#105;&#99;&#97;&#108;&#108;&#121;&#32;&#99;&#111;&#117;&#110;&#116;&#105;&#110;&#103;&#32;&#40;&#114;&#117;&#110;&#115;&#41;&#32;&#111;&#102;&#32;&#114;&#101;&#112;&#101;&#97;&#116;&#101;&#100;&#32;&#115;&#121;&#109;&#98;&#111;&#108;&#115;&#44;&#32;&#119;&#104;&#105;&#99;&#104;&#32;&#97;&#114;&#101;&#32;&#116;&#104;&#101;&#110;&#32;&#101;&#110;&#99;&#111;&#100;&#101;&#100;&#46;&#32;&#70;&#111;&#114;&#32;&#116;&#104;&#101;&#32;&#115;&#105;&#109;&#112;&#108;&#101;&#32;&#99;&#97;&#115;&#101;&#32;&#111;&#102;&#32;&#66;&#101;&#114;&#110;&#111;&#117;&#108;&#108;&#105;&#32;&#112;&#114;&#111;&#99;&#101;&#115;&#115;&#101;&#115;&#44;&#32;&#71;&#111;&#108;&#111;&#109;&#98;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#32;&#105;&#115;&#32;&#111;&#112;&#116;&#105;&#109;&#97;&#108;&#32;&#97;&#109;&#111;&#110;&#103;&#32;&#112;&#114;&#101;&#102;&#105;&#120;&#32;&#99;&#111;&#100;&#101;&#115;&#32;&#102;&#111;&#114;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#32;&#114;&#117;&#110;&#32;&#108;&#101;&#110;&#103;&#116;&#104;&#44;&#32;&#97;&#32;&#102;&#97;&#99;&#116;&#32;&#112;&#114;&#111;&#118;&#101;&#100;&#32;&#118;&#105;&#97;&#32;&#116;&#104;&#101;&#32;&#116;&#101;&#99;&#104;&#110;&#105;&#113;&#117;&#101;&#115;&#32;&#111;&#102;&#32;&#72;&#117;&#102;&#102;&#109;&#97;&#110;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#46;&#91;&#52;&#93;&#32;&#65;&#32;&#115;&#105;&#109;&#105;&#108;&#97;&#114;&#32;&#97;&#112;&#112;&#114;&#111;&#97;&#99;&#104;&#32;&#105;&#115;&#32;&#116;&#97;&#107;&#101;&#110;&#32;&#98;&#121;&#32;&#102;&#97;&#120;&#32;&#109;&#97;&#99;&#104;&#105;&#110;&#101;&#115;&#32;&#117;&#115;&#105;&#110;&#103;&#32;&#109;&#111;&#100;&#105;&#102;&#105;&#101;&#100;&#32;&#72;&#117;&#102;&#102;&#109;&#97;&#110;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#46;&#32;&#72;&#111;&#119;&#101;&#118;&#101;&#114;&#44;&#32;&#114;&#117;&#110;&#45;&#108;&#101;&#110;&#103;&#116;&#104;&#32;&#99;&#111;&#100;&#105;&#110;&#103;&#32;&#105;&#115;&#32;&#110;&#111;&#116;&#32;&#97;&#115;&#32;&#97;&#100;&#97;&#112;&#116;&#97;&#98;&#108;&#101;&#32;&#116;&#111;&#32;&#97;&#115;&#32;&#109;&#97;&#110;&#121;&#32;&#105;&#110;&#112;&#117;&#116;&#32;&#116;&#121;&#112;&#101;&#115;&#32;&#97;&#115;&#32;&#111;&#116;&#104;&#101;&#114;&#32;&#99;&#111;&#109;&#112;&#114;&#101;&#115;&#115;&#105;&#111;&#110;&#32;&#116;&#101;&#99;&#104;&#110;&#111;&#108;&#111;&#103;&#105;&#101;&#115;&#46;&#32;</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>+1s<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/zfb.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -183,16 +386,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/11/huffman/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://hadeseve.github.io/2019/04/11/huffman/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/08/python图论库Networkx/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python图论库Networkx</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -212,157 +474,14 @@
 
 
 
-
   
-    <article id="post-python图论库Networkx" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/08/python图论库Networkx/">python图论库Networkx</a>
-    </h1>
   
 
-        
-        <a href="/2019/04/08/python图论库Networkx/" class="archive-article-date">
-  	<time datetime="2019-04-08T12:01:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Networkx简介"><a href="#Networkx简介" class="headerlink" title="Networkx简介"></a>Networkx简介</h3><p>Networkx可以很直观地创建，操作很复杂的网络拓扑结构</p>
-<h4 id="创建图"><a href="#创建图" class="headerlink" title="创建图"></a>创建图</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> networkx</span><br><span class="line"></span><br><span class="line">G = networkx.Graph() <span class="comment">#创建一个无向图</span></span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/08/python图论库Networkx/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MISC一些总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/08/MISC一些总结/">MISC一些总结</a>
-    </h1>
   
 
-        
-        <a href="/2019/04/08/MISC一些总结/" class="archive-article-date">
-  	<time datetime="2019-04-08T11:19:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h3><h4 id="社会工程学"><a href="#社会工程学" class="headerlink" title="社会工程学"></a>社会工程学</h4><p>从广义上来说，社会工程学是一种通过对“人性”的心理弱点、本能反应、好奇心、信任、贪婪等心理陷阱进行诸如欺骗、伤害等危害手段取得自身利益的手法，它并不能等同于一般的欺骗手法，社会工程学尤其复杂，即使自认为最警惕最小心的人，一样会被高明的社会工程学手段损害利益。<br>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Misc</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/08/MISC一些总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
+
   
 
 
@@ -385,8 +504,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
