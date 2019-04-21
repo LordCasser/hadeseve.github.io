@@ -142,6 +142,92 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-NUSTCTF-misc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/21/NUSTCTF-misc/">NUSTCTF_misc</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/21/NUSTCTF-misc/" class="archive-article-date">
+  	<time datetime="2019-04-21T14:57:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="NJSUCTF-MISC-write-up"><a href="#NJSUCTF-MISC-write-up" class="headerlink" title="NJSUCTF_MISC_write_up"></a>NJSUCTF_MISC_write_up</h3><h5 id="blog-web"><a href="#blog-web" class="headerlink" title="blog? web?"></a>blog? web?</h5><p>这道题给了hint右键源代码, 直接看文章,最后一段开头##没有被markdown解析,推测有问题</p>
+<p>看到这段使用了和别的段落不一样的编码格式(HTML实体编码),直接解码又看不出问题</p>
+<p>注意到每隔10个有一个&amp;#x200C(这里有一个; 因为合一起会出事情所以没加上)或者&amp;#x200D</p>
+<p>这里附上出题脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">import</span> huffman</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    os.system(<span class="string">'pip3 install huffman'</span>)</span><br><span class="line">    <span class="keyword">import</span> huffman</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">flag_generate</span><span class="params">(n)</span>:</span></span><br><span class="line">    f = <span class="string">'nustctf_'</span></span><br><span class="line">    out = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        out += random.choice(f)</span><br><span class="line">    print(<span class="string">'flag is:nustctf&#123;'</span>,out,<span class="string">'&#125;'</span>)</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'log.txt'</span>,<span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(<span class="string">'flag is:nustctf&#123;'</span>+out +<span class="string">'&#125;\n'</span>)</span><br><span class="line">    <span class="keyword">return</span> out</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">huff_generate</span><span class="params">(flag)</span>:</span></span><br><span class="line">    t = huffman.codebook(collections.Counter(flag).items())</span><br><span class="line">    sq = collections.Counter(flag).values()</span><br><span class="line">    sq_counter = <span class="number">0</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'log.txt'</span>,<span class="string">'a+'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> sq:</span><br><span class="line">            sq_counter += i</span><br><span class="line">        sl = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> sq:</span><br><span class="line">            sl.append(round(i/sq_counter,<span class="number">2</span>))</span><br><span class="line">        print(sl)</span><br><span class="line">        f.write(str(sl)+<span class="string">'\n'</span>)</span><br><span class="line">        out = <span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> flag:</span><br><span class="line">            out = out + t[i]</span><br><span class="line">        print(out)</span><br><span class="line">        f.write(str(out)+<span class="string">'\n'</span>)</span><br><span class="line">        print(t)</span><br><span class="line">        f.write(str(t)+<span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s = <span class="string">'nustctf&#123;'</span>+flag_generate(<span class="number">30</span>)+<span class="string">'&#125;'</span></span><br><span class="line">huff_generate(s)发现了</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">code = <span class="string">'001010111110101111001100001010110011000000101100111001110100100011101001111011111100011011101001111010110101011110001'</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'1.txt'</span>,<span class="string">'r+'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    s = f.read()</span><br><span class="line">    m = s.split(<span class="string">';'</span>)</span><br><span class="line">    im = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(code.__len__()):</span><br><span class="line">        <span class="keyword">if</span> code[i] == <span class="string">'0'</span>:</span><br><span class="line">            m.insert(im,<span class="string">'&amp;#x200C'</span>)</span><br><span class="line">            im += <span class="number">11</span></span><br><span class="line">        <span class="keyword">if</span> code[i] == <span class="string">'1'</span>:</span><br><span class="line">            m.insert(im,<span class="string">'&amp;#x200D'</span>)</span><br><span class="line">            im += <span class="number">11</span></span><br><span class="line">    o = <span class="string">';'</span>.join(m)</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'snow.txt'</span>,<span class="string">'w'</span>) <span class="keyword">as</span> out:</span><br><span class="line">        out.write(o)</span><br></pre></td></tr></table></figure>
+<p>而哈夫曼编码相关信息我隐藏在了表格里,这个相信很多人发现了</p>
+<h4 id="helllp-meee"><a href="#helllp-meee" class="headerlink" title="helllp meee"></a>helllp meee</h4><p>这道题就是一道很简单的DNS_SHELL的流量分析题目,传输的数据用base64编码过了</p>
+<p>实际解码会发现这是一个创建flag文件和cat flag 的交互过程</p>
+<h4 id="around-the-world"><a href="#around-the-world" class="headerlink" title="around the world"></a>around the world</h4><p>jpg图片exif信息里有GPS数据,GPS数据按图片顺序导出来转码,导入谷歌地球出flag</p>
+<p>59个点,有人手动打点也行</p>
+<p>p.s.这道题我需要向各位谢罪,我一开始的文件放错了,导致大家浪费了时间,实在抱歉</p>
+<h4 id="blue"><a href="#blue" class="headerlink" title="blue"></a>blue</h4><p>这是一道蓝牙键盘流量分析</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MISC wp</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/21/NUSTCTF-misc/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-huffman" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
