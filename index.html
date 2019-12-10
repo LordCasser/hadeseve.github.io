@@ -142,6 +142,131 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Ubuntu18-04-深度学习环境搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/10/Ubuntu18-04-深度学习环境搭建/">Ubuntu18.04 深度学习环境搭建</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/10/Ubuntu18-04-深度学习环境搭建/" class="archive-article-date">
+  	<time datetime="2019-12-10T15:27:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Ubuntu18-04-NVIDIA-440-36-CUDA-10-2"><a href="#Ubuntu18-04-NVIDIA-440-36-CUDA-10-2" class="headerlink" title="Ubuntu18.04 +  NVIDIA 440.36 + CUDA  10.2"></a>Ubuntu18.04 +  NVIDIA 440.36 + CUDA  10.2</h1><blockquote>
+<p>Ubuntu内核版本 5.0.0-37-generic 基本是写这篇的时候的最新的内核，GPU是GTX 1060 6G</p>
+<p>这应该是目前最新版的深度学习配套环境，网上有很多人说不适配啥的，我没遇到不适配这种问题</p>
+<p>以下操作默认已经安装 python3.6 和 pip3 且默认已将 nouveau驱动添加入黑名单</p>
+</blockquote>
+<h2 id="一、安装nvidia驱动"><a href="#一、安装nvidia驱动" class="headerlink" title="一、安装nvidia驱动"></a>一、安装nvidia驱动</h2><ol>
+<li>检测是否已经将<code>nouveau</code> 加入黑名单</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsmod | grep -i nouveau</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>添加官方的驱动仓库</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:graphics-drivers/ppa</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>选择所需（我选择最新）的驱动</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nvidia-drive-(摁两下tab键)来查看所有</span><br></pre></td></tr></table></figure>
+<p>我选择的是440</p>
+<p>一般来说这样就安装好了，尝试 reboot</p>
+<h2 id="二、安装CUDA"><a href="#二、安装CUDA" class="headerlink" title="二、安装CUDA"></a>二、安装CUDA</h2><ol>
+<li>去NVIDIA官网下载 并安装（deb local）</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin</span><br><span class="line">sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600</span><br><span class="line">wget http://developer.download.nvidia.com/compute/cuda/10.2/Prod/local_installers/cuda-repo-ubuntu1804-10-2-local-10.2.89-440.33.01_1.0-1_amd64.deb</span><br><span class="line">sudo dpkg -i cuda-repo-ubuntu1804-10-2-local-10.2.89-440.33.01_1.0-1_amd64.deb</span><br><span class="line">sudo apt-key add /var/cuda-repo-10-2-local-10.2.89-440.33.01/7fa2af80.pub</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get -y install cuda</span><br></pre></td></tr></table></figure>
+<h2 id="三、安装cuDNN"><a href="#三、安装cuDNN" class="headerlink" title="三、安装cuDNN"></a>三、安装cuDNN</h2><h4 id="cuDNN-V7-6-5-For-CUDA-10-2"><a href="#cuDNN-V7-6-5-For-CUDA-10-2" class="headerlink" title="cuDNN V7.6.5 For CUDA 10.2"></a><a href="https://developer.nvidia.com/rdp/cudnn-download#a-collapse765-102" target="_blank" rel="noopener">cuDNN V7.6.5 For CUDA 10.2</a></h4><ol>
+<li><p>Install the runtime library, for example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i libcudnn7_7.6.5.32-1+cuda10.2_amd64.deb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Install the developer library, for example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i libcudnn7-dev_7.6.5.32-1+cuda10.2_amd64.deb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Install the code samples and the cuDNN Library User Guide, for example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i libcudnn7-doc_7.6.5.32-1+cuda10.2_amd64.deb</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="验证cuDNN是否安装成功"><a href="#验证cuDNN是否安装成功" class="headerlink" title="验证cuDNN是否安装成功"></a>验证cuDNN是否安装成功</h4><ol>
+<li><p>Copy the cuDNN sample to a writable path.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$cp -r /usr/src/cudnn_samples_v7/ $HOME</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Go to the writable path.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd  $HOME/cudnn_samples_v7/mnistCUDNN</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Compile the mnistCUDNN sample.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$make clean &amp;&amp; make</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Run the mnistCUDNN sample.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./mnistCUDNN</span><br></pre></td></tr></table></figure>
+<p>If cuDNN is properly installed and running on your Linux system, you will see a message similar to the following:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Test passed!</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="四、安装PyTorch"><a href="#四、安装PyTorch" class="headerlink" title="四、安装PyTorch"></a>四、安装PyTorch</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip3 install torch</span><br></pre></td></tr></table></figure>
+<p>验证PyTorch</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import torch</span><br><span class="line">torch.cuda.is_available()</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DEEPLearning 环境配置</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/10/Ubuntu18-04-深度学习环境搭建/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-交通出行小助手" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://hadeseve.github.io">
-  <title>Archives: 2019 | hack for fun</title>
+  <title>Ubuntu18.04 深度学习环境搭建 | hack for fun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="hack for fun">
-<meta property="og:url" content="https://hadeseve.github.io/archives/2019/index.html">
+  <meta name="description" content="Ubuntu18.04 +  NVIDIA 440.36 + CUDA  10.2 Ubuntu内核版本 5.0.0-37-generic 基本是写这篇的时候的最新的内核，GPU是GTX 1060 6G 这应该是目前最新版的深度学习配套环境，网上有很多人说不适配啥的，我没遇到不适配这种问题 以下操作默认已经安装 python3.6 和 pip3 且默认已将 nouveau驱动添加入黑名单  一、安">
+<meta name="keywords" content="DEEPLearning 环境配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu18.04 深度学习环境搭建">
+<meta property="og:url" content="https://hadeseve.github.io/2019/12/10/Ubuntu18-04-深度学习环境搭建/index.html">
 <meta property="og:site_name" content="hack for fun">
+<meta property="og:description" content="Ubuntu18.04 +  NVIDIA 440.36 + CUDA  10.2 Ubuntu内核版本 5.0.0-37-generic 基本是写这篇的时候的最新的内核，GPU是GTX 1060 6G 这应该是目前最新版的深度学习配套环境，网上有很多人说不适配啥的，我没遇到不适配这种问题 以下操作默认已经安装 python3.6 和 pip3 且默认已将 nouveau驱动添加入黑名单  一、安">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-10T16:01:49.569Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hack for fun">
+<meta name="twitter:title" content="Ubuntu18.04 深度学习环境搭建">
+<meta name="twitter:description" content="Ubuntu18.04 +  NVIDIA 440.36 + CUDA  10.2 Ubuntu内核版本 5.0.0-37-generic 基本是写这篇的时候的最新的内核，GPU是GTX 1060 6G 这应该是目前最新版的深度学习配套环境，网上有很多人说不适配啥的，我没遇到不适配这种问题 以下操作默认已经安装 python3.6 和 pip3 且默认已将 nouveau驱动添加入黑名单  一、安">
   
     <link rel="alternative" href="/atom.xml" title="hack for fun" type="application/atom+xml">
   
@@ -140,36 +145,117 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Ubuntu18-04-深度学习环境搭建" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/10/Ubuntu18-04-深度学习环境搭建/" class="archive-article-date">
-  	<time datetime="2019-12-10T15:27:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-10</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/10/Ubuntu18-04-深度学习环境搭建/">Ubuntu18.04 深度学习环境搭建</a>
+    <h1 class="article-title" itemprop="name">
+      Ubuntu18.04 深度学习环境搭建
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/12/10/Ubuntu18-04-深度学习环境搭建/" class="archive-article-date">
+  	<time datetime="2019-12-10T15:27:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Ubuntu18-04-NVIDIA-440-36-CUDA-10-2"><a href="#Ubuntu18-04-NVIDIA-440-36-CUDA-10-2" class="headerlink" title="Ubuntu18.04 +  NVIDIA 440.36 + CUDA  10.2"></a>Ubuntu18.04 +  NVIDIA 440.36 + CUDA  10.2</h1><blockquote>
+<p>Ubuntu内核版本 5.0.0-37-generic 基本是写这篇的时候的最新的内核，GPU是GTX 1060 6G</p>
+<p>这应该是目前最新版的深度学习配套环境，网上有很多人说不适配啥的，我没遇到不适配这种问题</p>
+<p>以下操作默认已经安装 python3.6 和 pip3 且默认已将 nouveau驱动添加入黑名单</p>
+</blockquote>
+<h2 id="一、安装nvidia驱动"><a href="#一、安装nvidia驱动" class="headerlink" title="一、安装nvidia驱动"></a>一、安装nvidia驱动</h2><ol>
+<li>检测是否已经将<code>nouveau</code> 加入黑名单</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsmod | grep -i nouveau</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>添加官方的驱动仓库</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:graphics-drivers/ppa</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>选择所需（我选择最新）的驱动</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nvidia-drive-(摁两下tab键)来查看所有</span><br></pre></td></tr></table></figure>
+<p>我选择的是440</p>
+<p>一般来说这样就安装好了，尝试 reboot</p>
+<h2 id="二、安装CUDA"><a href="#二、安装CUDA" class="headerlink" title="二、安装CUDA"></a>二、安装CUDA</h2><ol>
+<li>去NVIDIA官网下载 并安装（deb local）</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin</span><br><span class="line">sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600</span><br><span class="line">wget http://developer.download.nvidia.com/compute/cuda/10.2/Prod/local_installers/cuda-repo-ubuntu1804-10-2-local-10.2.89-440.33.01_1.0-1_amd64.deb</span><br><span class="line">sudo dpkg -i cuda-repo-ubuntu1804-10-2-local-10.2.89-440.33.01_1.0-1_amd64.deb</span><br><span class="line">sudo apt-key add /var/cuda-repo-10-2-local-10.2.89-440.33.01/7fa2af80.pub</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get -y install cuda</span><br></pre></td></tr></table></figure>
+<h2 id="三、安装cuDNN"><a href="#三、安装cuDNN" class="headerlink" title="三、安装cuDNN"></a>三、安装cuDNN</h2><h4 id="cuDNN-V7-6-5-For-CUDA-10-2"><a href="#cuDNN-V7-6-5-For-CUDA-10-2" class="headerlink" title="cuDNN V7.6.5 For CUDA 10.2"></a><a href="https://developer.nvidia.com/rdp/cudnn-download#a-collapse765-102" target="_blank" rel="noopener">cuDNN V7.6.5 For CUDA 10.2</a></h4><ol>
+<li><p>Install the runtime library, for example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i libcudnn7_7.6.5.32-1+cuda10.2_amd64.deb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Install the developer library, for example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i libcudnn7-dev_7.6.5.32-1+cuda10.2_amd64.deb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Install the code samples and the cuDNN Library User Guide, for example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i libcudnn7-doc_7.6.5.32-1+cuda10.2_amd64.deb</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="验证cuDNN是否安装成功"><a href="#验证cuDNN是否安装成功" class="headerlink" title="验证cuDNN是否安装成功"></a>验证cuDNN是否安装成功</h4><ol>
+<li><p>Copy the cuDNN sample to a writable path.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$cp -r /usr/src/cudnn_samples_v7/ $HOME</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Go to the writable path.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd  $HOME/cudnn_samples_v7/mnistCUDNN</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Compile the mnistCUDNN sample.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$make clean &amp;&amp; make</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Run the mnistCUDNN sample.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./mnistCUDNN</span><br></pre></td></tr></table></figure>
+<p>If cuDNN is properly installed and running on your Linux system, you will see a message similar to the following:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Test passed!</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="四、安装PyTorch"><a href="#四、安装PyTorch" class="headerlink" title="四、安装PyTorch"></a>四、安装PyTorch</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip3 install torch</span><br></pre></td></tr></table></figure>
+<p>验证PyTorch</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import torch</span><br><span class="line">torch.cuda.is_available()</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>+1s<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/zfb.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wx.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -181,247 +267,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://hadeseve.github.io/2019/12/10/Ubuntu18-04-深度学习环境搭建/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/30/交通出行小助手/" class="archive-article-date">
-  	<time datetime="2019-11-30T05:55:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/30/交通出行小助手/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">公交出行小助手</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/30/交通出行小助手/">公交出行小助手</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/15/资源收集/" class="archive-article-date">
-  	<time datetime="2019-11-15T12:21:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/15/资源收集/">资源收集</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">MISC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/15/下三层HIDS构造分析/" class="archive-article-date">
-  	<time datetime="2019-11-15T12:01:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/15/下三层HIDS构造分析/">下三层HIDS构造分析</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HIDS 网络协议 端口扫描</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/11/huffman/" class="archive-article-date">
-  	<time datetime="2019-04-11T07:22:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/11/huffman/">Huffman</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MISC1 FLAG</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/08/python图论库Networkx/" class="archive-article-date">
-  	<time datetime="2019-04-08T12:01:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/08/python图论库Networkx/">python图论库Networkx</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/08/MISC一些总结/" class="archive-article-date">
-  	<time datetime="2019-04-08T11:19:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/08/MISC一些总结/">MISC一些总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Misc</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -444,8 +389,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
